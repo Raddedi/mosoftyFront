@@ -1,0 +1,125 @@
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">List Produits</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-responsive-md">
+              <tr>
+                <th><strong>Image</strong></th>
+                <th><strong>Nom du Produit</strong></th>
+                <th><strong>Prix</strong></th>
+                <th><strong>Ajouté le</strong></th>
+                <th><strong>Actions</strong></th>
+              </tr>
+  
+              <tbody>
+                <tr *ngFor="let produit of produits">
+                    <h2 class="table-avatar">
+                        <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle"
+                            src="http://localhost:8080/produit/files/{{produit.image}}" alt="User Image"></a>
+                      </h2>
+                  <td>{{ produit.nomProduit }}</td>
+                  <td> {{produit.prixProduit}} </td>
+                  <td>{{ produit.localDate }}</td>
+                  
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      style="margin-right: 10px"
+                    >
+                      <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button
+                      class="btn btn-danger"
+                      style="margin-left: 10px"
+                      (click)="deleteProduit(produit.id)"
+                    >
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--<div class="d-flex justify-content-between align-items-center p-2">
+            <ngb-pagination
+              [collectionSize]="totalItems"
+              [(page)]="currentPage"
+              [pageSize]="pageSize"
+              (pageChange)="getAllOrders()"
+              class="mr-2"
+            ></ngb-pagination>
+            <div>
+              <select
+                class="default-select form-control wide w-100"
+                class="form-control custom-select"
+                [(ngModel)]="pageSize"
+                (ngModelChange)="getAllOrders()"
+              >
+                <option [ngValue]="2"><strong>2 items</strong></option>
+                <option [ngValue]="4">4 items</option>
+                <option [ngValue]="6">6 items</option>
+                <option [ngValue]="8">8 items</option>
+                <option [ngValue]="10">10 items</option>
+              </select>
+            </div>
+          </div>
+        </div>-->
+      </div>
+  
+      <p *ngIf="produits?.length === 0" class="text-center">
+        Il n'y a pas encore de Produit.
+      </p>
+  
+      <!--<ng-template #updateOrderModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Update Order Status</h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select
+              class="form-control"
+              id="status"
+              name="status"
+              [(ngModel)]="selectedStatus"
+              required
+            >
+              <option value="PENDING">Pending</option>
+              <option value="ACCEPTED">Accepted</option>
+              <option value="REJECTED">Rejected</option>
+              <option value="COMPLETED">Completed</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="modal.dismiss('Cancel click')"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="updateOrder(selectedOrder)"
+          >
+            Update Status
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>-->
+  

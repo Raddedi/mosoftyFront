@@ -1,0 +1,56 @@
+<div class="col-xl-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Ajouter Produit </h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form [formGroup]="form" (ngSubmit)="add()" >
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Nom du Produit</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Email" formControlName="nomProduit">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Prix du Produit</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" placeholder="Prix du Produit" formControlName="prixProduit">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Prix de Base</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" placeholder="Prix de Base" formControlName="prixDeBase">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Description" >
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Alt SEO</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Alt SEO" formControlName="altSEO">
+                        </div>
+                    </div>
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" (change)="handleFileInput($event)">
+                        <label class="custom-file-label">Image</label>
+        
+                      </div>
+                    
+                    
+                    <div class="mb-3 row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
